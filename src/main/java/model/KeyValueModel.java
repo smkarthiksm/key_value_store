@@ -1,18 +1,12 @@
 package model;
 
-import java.util.Date;
-
 public class KeyValueModel {
     private String key;
-    private String value;
-    private int timeToLive = 0;
-    private long createdAt = new Date().getTime();
+    private ValueModel valueModel;
 
-    public KeyValueModel(String key, String value, int timeToLive, long createdAt) {
+    public KeyValueModel(String key, ValueModel valueModel) {
         this.key = key;
-        this.value = value;
-        this.timeToLive = timeToLive;
-        this.createdAt = createdAt;
+        this.valueModel = valueModel;
     }
 
     public String getKey() {
@@ -23,27 +17,19 @@ public class KeyValueModel {
         this.key = key;
     }
 
-    public String getValue() {
-        return value;
+    public ValueModel getValueModel() {
+        return valueModel;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setValueModel(ValueModel valueModel) {
+        this.valueModel = valueModel;
     }
 
-    public int getTimeToLive() {
-        return timeToLive;
-    }
-
-    public void setTimeToLive(int timeToLive) {
-        this.timeToLive = timeToLive;
-    }
-
-    public long getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(long createdAt) {
-        this.createdAt = createdAt;
+    @Override
+    public String toString() {
+        return "KeyValueModel{" +
+                "key='" + key + '\'' +
+                ", valueModel=" + valueModel +
+                '}';
     }
 }

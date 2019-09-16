@@ -1,5 +1,5 @@
 package constants;
 
 public class ApplicationConstants {
-    public static String Directorys = "";
+    public static String KEY_ALREADY_EXISTS = "Key Already Exists";
 }

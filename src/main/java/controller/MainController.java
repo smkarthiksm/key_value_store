@@ -5,6 +5,7 @@ import implementation.JsonDataStore;
 import interfaces.IFileOperation;
 import interfaces.IJsonDataStore;
 import model.KeyValueModel;
+import model.ValueModel;
 import utility.Utility;
 
 import java.io.IOException;
@@ -14,7 +15,9 @@ public class MainController {
 
     public static void main(String[] args) throws IOException {
         new MainController().getFileConnection("hello.json", "/Users/karthiksm/Documents/key_value_store");
-        new MainController().createRecord("hello.json", "/Users/karthiksm/Documents/key_value_store", null);
+        ValueModel valueModel = new ValueModel("testvaluee", 100);
+        KeyValueModel keyValueModel = new KeyValueModel("zz", valueModel);
+        new MainController().createRecord("hello.json", "/Users/karthiksm/Documents/key_value_store", keyValueModel);
     }
 
     public boolean createFileUsingDefaultPath(String filename) {
